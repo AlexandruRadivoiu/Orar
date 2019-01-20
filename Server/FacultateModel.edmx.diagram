@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="30e4e51f558a44289f91cfa87deb0771" Name="Diagram1">
+        <EntityTypeShape EntityType="FacultateModel.Departamente" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FacultateModel.Grupe" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FacultateModel.Materii" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FacultateModel.Orar" Width="1.5" PointX="9.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FacultateModel.Profesori" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FacultateModel.ProfesorMaterie" Width="1.5" PointX="7.5" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FacultateModel.Specializari" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FacultateModel.Studenti" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="FacultateModel.FK_DEPARTAMENTE_PROFESORI" ManuallyRouted="false" />
+        <AssociationConnector Association="FacultateModel.FK_DEPARTAMENTE_SPECIALIZARI" ManuallyRouted="false" />
+        <AssociationConnector Association="FacultateModel.FK_GRUPE_ORAR" ManuallyRouted="false" />
+        <AssociationConnector Association="FacultateModel.FK_GRUPE_STUDENTI" ManuallyRouted="false" />
+        <AssociationConnector Association="FacultateModel.FK_SPECIALIZARI_GRUPE" ManuallyRouted="false" />
+        <AssociationConnector Association="FacultateModel.FK_MATERII_PM" ManuallyRouted="false" />
+        <AssociationConnector Association="FacultateModel.FK_SPECIALIZARI_MATERII" ManuallyRouted="false" />
+        <AssociationConnector Association="FacultateModel.FK_PROFESORMATERIE_ORAR" ManuallyRouted="false" />
+        <AssociationConnector Association="FacultateModel.FK_PROFESORI_PM" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

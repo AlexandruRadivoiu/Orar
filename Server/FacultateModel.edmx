@@ -1,0 +1,655 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FacultateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Departamente">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Denumire" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Grupe">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Denumire" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="SpecializareID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Materii">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Denumire" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Nr_Ore" Type="int" Nullable="false" />
+          <Property Name="SpecializareID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Zi" Type="date" Nullable="false" />
+          <Property Name="Nr_Row" Type="int" Nullable="false" />
+          <Property Name="Modul" Type="int" Nullable="false" />
+          <Property Name="GrupaID" Type="int" Nullable="false" />
+          <Property Name="ProfesorMaterieID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Profesori">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nume" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Prenume" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="Nickname" Type="varchar" MaxLength="25" />
+          <Property Name="Parola" Type="varchar" MaxLength="25" />
+          <Property Name="Data_nasterii" Type="date" />
+          <Property Name="Cnp" Type="varchar" MaxLength="13" />
+          <Property Name="DepartamentID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProfesorMaterie">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProfesorID" Type="int" Nullable="false" />
+          <Property Name="MaterieID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Specializari">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Denumire" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="DepartamentID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Studenti">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nume" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Prenume" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="Nickname" Type="varchar" MaxLength="25" />
+          <Property Name="Parola" Type="varchar" MaxLength="25" />
+          <Property Name="Data_nasterii" Type="date" />
+          <Property Name="Cnp" Type="varchar" MaxLength="13" />
+          <Property Name="GrupaID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_DEPARTAMENTE_PROFESORI">
+          <End Role="Departamente" Type="Self.Departamente" Multiplicity="1" />
+          <End Role="Profesori" Type="Self.Profesori" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamente">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Profesori">
+              <PropertyRef Name="DepartamentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DEPARTAMENTE_SPECIALIZARI">
+          <End Role="Departamente" Type="Self.Departamente" Multiplicity="1" />
+          <End Role="Specializari" Type="Self.Specializari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamente">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Specializari">
+              <PropertyRef Name="DepartamentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GRUPE_ORAR">
+          <End Role="Grupe" Type="Self.Grupe" Multiplicity="1" />
+          <End Role="Orar" Type="Self.Orar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupe">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orar">
+              <PropertyRef Name="GrupaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GRUPE_STUDENTI">
+          <End Role="Grupe" Type="Self.Grupe" Multiplicity="1" />
+          <End Role="Studenti" Type="Self.Studenti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupe">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Studenti">
+              <PropertyRef Name="GrupaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MATERII_PM">
+          <End Role="Materii" Type="Self.Materii" Multiplicity="1" />
+          <End Role="ProfesorMaterie" Type="Self.ProfesorMaterie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materii">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProfesorMaterie">
+              <PropertyRef Name="MaterieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROFESORI_PM">
+          <End Role="Profesori" Type="Self.Profesori" Multiplicity="1" />
+          <End Role="ProfesorMaterie" Type="Self.ProfesorMaterie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesori">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProfesorMaterie">
+              <PropertyRef Name="ProfesorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROFESORMATERIE_ORAR">
+          <End Role="ProfesorMaterie" Type="Self.ProfesorMaterie" Multiplicity="1" />
+          <End Role="Orar" Type="Self.Orar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProfesorMaterie">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orar">
+              <PropertyRef Name="ProfesorMaterieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SPECIALIZARI_GRUPE">
+          <End Role="Specializari" Type="Self.Specializari" Multiplicity="1" />
+          <End Role="Grupe" Type="Self.Grupe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specializari">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Grupe">
+              <PropertyRef Name="SpecializareID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SPECIALIZARI_MATERII">
+          <End Role="Specializari" Type="Self.Specializari" Multiplicity="1" />
+          <End Role="Materii" Type="Self.Materii" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specializari">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Materii">
+              <PropertyRef Name="SpecializareID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="getOrarByGrupaId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GrupaId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getOrarByProfesor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProfesorNume" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="FacultateModelStoreContainer">
+          <EntitySet Name="Departamente" EntityType="Self.Departamente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Grupe" EntityType="Self.Grupe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Materii" EntityType="Self.Materii" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orar" EntityType="Self.Orar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profesori" EntityType="Self.Profesori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProfesorMaterie" EntityType="Self.ProfesorMaterie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Specializari" EntityType="Self.Specializari" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Studenti" EntityType="Self.Studenti" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DEPARTAMENTE_PROFESORI" Association="Self.FK_DEPARTAMENTE_PROFESORI">
+            <End Role="Departamente" EntitySet="Departamente" />
+            <End Role="Profesori" EntitySet="Profesori" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DEPARTAMENTE_SPECIALIZARI" Association="Self.FK_DEPARTAMENTE_SPECIALIZARI">
+            <End Role="Departamente" EntitySet="Departamente" />
+            <End Role="Specializari" EntitySet="Specializari" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GRUPE_ORAR" Association="Self.FK_GRUPE_ORAR">
+            <End Role="Grupe" EntitySet="Grupe" />
+            <End Role="Orar" EntitySet="Orar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GRUPE_STUDENTI" Association="Self.FK_GRUPE_STUDENTI">
+            <End Role="Grupe" EntitySet="Grupe" />
+            <End Role="Studenti" EntitySet="Studenti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MATERII_PM" Association="Self.FK_MATERII_PM">
+            <End Role="Materii" EntitySet="Materii" />
+            <End Role="ProfesorMaterie" EntitySet="ProfesorMaterie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROFESORI_PM" Association="Self.FK_PROFESORI_PM">
+            <End Role="Profesori" EntitySet="Profesori" />
+            <End Role="ProfesorMaterie" EntitySet="ProfesorMaterie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROFESORMATERIE_ORAR" Association="Self.FK_PROFESORMATERIE_ORAR">
+            <End Role="ProfesorMaterie" EntitySet="ProfesorMaterie" />
+            <End Role="Orar" EntitySet="Orar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SPECIALIZARI_GRUPE" Association="Self.FK_SPECIALIZARI_GRUPE">
+            <End Role="Specializari" EntitySet="Specializari" />
+            <End Role="Grupe" EntitySet="Grupe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SPECIALIZARI_MATERII" Association="Self.FK_SPECIALIZARI_MATERII">
+            <End Role="Specializari" EntitySet="Specializari" />
+            <End Role="Materii" EntitySet="Materii" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FacultateModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Departamente">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Denumire" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Profesoris" Relationship="Self.FK_DEPARTAMENTE_PROFESORI" FromRole="Departamente" ToRole="Profesori" />
+          <NavigationProperty Name="Specializaris" Relationship="Self.FK_DEPARTAMENTE_SPECIALIZARI" FromRole="Departamente" ToRole="Specializari" />
+        </EntityType>
+        <EntityType Name="Grupe">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Denumire" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SpecializareID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Orars" Relationship="Self.FK_GRUPE_ORAR" FromRole="Grupe" ToRole="Orar" />
+          <NavigationProperty Name="Studentis" Relationship="Self.FK_GRUPE_STUDENTI" FromRole="Grupe" ToRole="Studenti" />
+          <NavigationProperty Name="Specializari" Relationship="Self.FK_SPECIALIZARI_GRUPE" FromRole="Grupe" ToRole="Specializari" />
+        </EntityType>
+        <EntityType Name="Materii">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Denumire" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nr_Ore" Type="Int32" Nullable="false" />
+          <Property Name="SpecializareID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ProfesorMateries" Relationship="Self.FK_MATERII_PM" FromRole="Materii" ToRole="ProfesorMaterie" />
+          <NavigationProperty Name="Specializari" Relationship="Self.FK_SPECIALIZARI_MATERII" FromRole="Materii" ToRole="Specializari" />
+        </EntityType>
+        <EntityType Name="Orar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Zi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Nr_Row" Type="Int32" Nullable="false" />
+          <Property Name="Modul" Type="Int32" Nullable="false" />
+          <Property Name="GrupaID" Type="Int32" Nullable="false" />
+          <Property Name="ProfesorMaterieID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Grupe" Relationship="Self.FK_GRUPE_ORAR" FromRole="Orar" ToRole="Grupe" />
+          <NavigationProperty Name="ProfesorMaterie" Relationship="Self.FK_PROFESORMATERIE_ORAR" FromRole="Orar" ToRole="ProfesorMaterie" />
+        </EntityType>
+        <EntityType Name="Profesori">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nume" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prenume" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nickname" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Parola" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Data_nasterii" Type="DateTime" Precision="0" />
+          <Property Name="Cnp" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="DepartamentID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Departamente" Relationship="Self.FK_DEPARTAMENTE_PROFESORI" FromRole="Profesori" ToRole="Departamente" />
+          <NavigationProperty Name="ProfesorMateries" Relationship="Self.FK_PROFESORI_PM" FromRole="Profesori" ToRole="ProfesorMaterie" />
+        </EntityType>
+        <EntityType Name="ProfesorMaterie">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProfesorID" Type="Int32" Nullable="false" />
+          <Property Name="MaterieID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Materii" Relationship="Self.FK_MATERII_PM" FromRole="ProfesorMaterie" ToRole="Materii" />
+          <NavigationProperty Name="Orars" Relationship="Self.FK_PROFESORMATERIE_ORAR" FromRole="ProfesorMaterie" ToRole="Orar" />
+          <NavigationProperty Name="Profesori" Relationship="Self.FK_PROFESORI_PM" FromRole="ProfesorMaterie" ToRole="Profesori" />
+        </EntityType>
+        <EntityType Name="Specializari">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Denumire" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DepartamentID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Departamente" Relationship="Self.FK_DEPARTAMENTE_SPECIALIZARI" FromRole="Specializari" ToRole="Departamente" />
+          <NavigationProperty Name="Grupes" Relationship="Self.FK_SPECIALIZARI_GRUPE" FromRole="Specializari" ToRole="Grupe" />
+          <NavigationProperty Name="Materiis" Relationship="Self.FK_SPECIALIZARI_MATERII" FromRole="Specializari" ToRole="Materii" />
+        </EntityType>
+        <EntityType Name="Studenti">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nume" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prenume" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nickname" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Parola" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Data_nasterii" Type="DateTime" Precision="0" />
+          <Property Name="Cnp" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="GrupaID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Grupe" Relationship="Self.FK_GRUPE_STUDENTI" FromRole="Studenti" ToRole="Grupe" />
+        </EntityType>
+        <Association Name="FK_DEPARTAMENTE_PROFESORI">
+          <End Role="Departamente" Type="Self.Departamente" Multiplicity="1" />
+          <End Role="Profesori" Type="Self.Profesori" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamente">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Profesori">
+              <PropertyRef Name="DepartamentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DEPARTAMENTE_SPECIALIZARI">
+          <End Role="Departamente" Type="Self.Departamente" Multiplicity="1" />
+          <End Role="Specializari" Type="Self.Specializari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamente">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Specializari">
+              <PropertyRef Name="DepartamentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GRUPE_ORAR">
+          <End Role="Grupe" Type="Self.Grupe" Multiplicity="1" />
+          <End Role="Orar" Type="Self.Orar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupe">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orar">
+              <PropertyRef Name="GrupaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GRUPE_STUDENTI">
+          <End Role="Grupe" Type="Self.Grupe" Multiplicity="1" />
+          <End Role="Studenti" Type="Self.Studenti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupe">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Studenti">
+              <PropertyRef Name="GrupaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SPECIALIZARI_GRUPE">
+          <End Role="Specializari" Type="Self.Specializari" Multiplicity="1" />
+          <End Role="Grupe" Type="Self.Grupe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specializari">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Grupe">
+              <PropertyRef Name="SpecializareID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MATERII_PM">
+          <End Role="Materii" Type="Self.Materii" Multiplicity="1" />
+          <End Role="ProfesorMaterie" Type="Self.ProfesorMaterie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materii">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProfesorMaterie">
+              <PropertyRef Name="MaterieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SPECIALIZARI_MATERII">
+          <End Role="Specializari" Type="Self.Specializari" Multiplicity="1" />
+          <End Role="Materii" Type="Self.Materii" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specializari">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Materii">
+              <PropertyRef Name="SpecializareID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROFESORMATERIE_ORAR">
+          <End Role="ProfesorMaterie" Type="Self.ProfesorMaterie" Multiplicity="1" />
+          <End Role="Orar" Type="Self.Orar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProfesorMaterie">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orar">
+              <PropertyRef Name="ProfesorMaterieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROFESORI_PM">
+          <End Role="Profesori" Type="Self.Profesori" Multiplicity="1" />
+          <End Role="ProfesorMaterie" Type="Self.ProfesorMaterie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profesori">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProfesorMaterie">
+              <PropertyRef Name="ProfesorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FacultateEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Departamentes" EntityType="Self.Departamente" />
+          <EntitySet Name="Grupes" EntityType="Self.Grupe" />
+          <EntitySet Name="Materiis" EntityType="Self.Materii" />
+          <EntitySet Name="Orars" EntityType="Self.Orar" />
+          <EntitySet Name="Profesoris" EntityType="Self.Profesori" />
+          <EntitySet Name="ProfesorMateries" EntityType="Self.ProfesorMaterie" />
+          <EntitySet Name="Specializaris" EntityType="Self.Specializari" />
+          <EntitySet Name="Studentis" EntityType="Self.Studenti" />
+          <AssociationSet Name="FK_DEPARTAMENTE_PROFESORI" Association="Self.FK_DEPARTAMENTE_PROFESORI">
+            <End Role="Departamente" EntitySet="Departamentes" />
+            <End Role="Profesori" EntitySet="Profesoris" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DEPARTAMENTE_SPECIALIZARI" Association="Self.FK_DEPARTAMENTE_SPECIALIZARI">
+            <End Role="Departamente" EntitySet="Departamentes" />
+            <End Role="Specializari" EntitySet="Specializaris" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GRUPE_ORAR" Association="Self.FK_GRUPE_ORAR">
+            <End Role="Grupe" EntitySet="Grupes" />
+            <End Role="Orar" EntitySet="Orars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GRUPE_STUDENTI" Association="Self.FK_GRUPE_STUDENTI">
+            <End Role="Grupe" EntitySet="Grupes" />
+            <End Role="Studenti" EntitySet="Studentis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SPECIALIZARI_GRUPE" Association="Self.FK_SPECIALIZARI_GRUPE">
+            <End Role="Specializari" EntitySet="Specializaris" />
+            <End Role="Grupe" EntitySet="Grupes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MATERII_PM" Association="Self.FK_MATERII_PM">
+            <End Role="Materii" EntitySet="Materiis" />
+            <End Role="ProfesorMaterie" EntitySet="ProfesorMateries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SPECIALIZARI_MATERII" Association="Self.FK_SPECIALIZARI_MATERII">
+            <End Role="Specializari" EntitySet="Specializaris" />
+            <End Role="Materii" EntitySet="Materiis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROFESORMATERIE_ORAR" Association="Self.FK_PROFESORMATERIE_ORAR">
+            <End Role="ProfesorMaterie" EntitySet="ProfesorMateries" />
+            <End Role="Orar" EntitySet="Orars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROFESORI_PM" Association="Self.FK_PROFESORI_PM">
+            <End Role="Profesori" EntitySet="Profesoris" />
+            <End Role="ProfesorMaterie" EntitySet="ProfesorMateries" />
+          </AssociationSet>
+          <FunctionImport Name="getOrarByGrupaId" ReturnType="Collection(FacultateModel.getOrarByGrupaId_Result)">
+            <Parameter Name="GrupaId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getOrarByProfesor" ReturnType="Collection(FacultateModel.getOrarByProfesor_Result)">
+            <Parameter Name="ProfesorNume" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="getOrarByGrupaId_Result">
+          <Property Type="DateTime" Name="Zi" Nullable="false" />
+          <Property Type="Int32" Name="Nr_Row" Nullable="false" />
+          <Property Type="Int32" Name="Modul" Nullable="false" />
+          <Property Type="String" Name="Nume" Nullable="false" MaxLength="25" />
+          <Property Type="String" Name="Denumire" Nullable="false" MaxLength="15" />
+        </ComplexType>
+        <ComplexType Name="getOrarByProfesor_Result">
+          <Property Type="DateTime" Name="Zi" Nullable="false" />
+          <Property Type="Int32" Name="Nr_Row" Nullable="false" />
+          <Property Type="Int32" Name="Modul" Nullable="false" />
+          <Property Type="String" Name="Nume" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Denumire" Nullable="false" MaxLength="15" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FacultateModelStoreContainer" CdmEntityContainer="FacultateEntities">
+          <EntitySetMapping Name="Departamentes">
+            <EntityTypeMapping TypeName="FacultateModel.Departamente">
+              <MappingFragment StoreEntitySet="Departamente">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Denumire" ColumnName="Denumire" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grupes">
+            <EntityTypeMapping TypeName="FacultateModel.Grupe">
+              <MappingFragment StoreEntitySet="Grupe">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Denumire" ColumnName="Denumire" />
+                <ScalarProperty Name="SpecializareID" ColumnName="SpecializareID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Materiis">
+            <EntityTypeMapping TypeName="FacultateModel.Materii">
+              <MappingFragment StoreEntitySet="Materii">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Denumire" ColumnName="Denumire" />
+                <ScalarProperty Name="Nr_Ore" ColumnName="Nr_Ore" />
+                <ScalarProperty Name="SpecializareID" ColumnName="SpecializareID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orars">
+            <EntityTypeMapping TypeName="FacultateModel.Orar">
+              <MappingFragment StoreEntitySet="Orar">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Zi" ColumnName="Zi" />
+                <ScalarProperty Name="Nr_Row" ColumnName="Nr_Row" />
+                <ScalarProperty Name="Modul" ColumnName="Modul" />
+                <ScalarProperty Name="GrupaID" ColumnName="GrupaID" />
+                <ScalarProperty Name="ProfesorMaterieID" ColumnName="ProfesorMaterieID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profesoris">
+            <EntityTypeMapping TypeName="FacultateModel.Profesori">
+              <MappingFragment StoreEntitySet="Profesori">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+                <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+                <ScalarProperty Name="Parola" ColumnName="Parola" />
+                <ScalarProperty Name="Data_nasterii" ColumnName="Data_nasterii" />
+                <ScalarProperty Name="Cnp" ColumnName="Cnp" />
+                <ScalarProperty Name="DepartamentID" ColumnName="DepartamentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProfesorMateries">
+            <EntityTypeMapping TypeName="FacultateModel.ProfesorMaterie">
+              <MappingFragment StoreEntitySet="ProfesorMaterie">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProfesorID" ColumnName="ProfesorID" />
+                <ScalarProperty Name="MaterieID" ColumnName="MaterieID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Specializaris">
+            <EntityTypeMapping TypeName="FacultateModel.Specializari">
+              <MappingFragment StoreEntitySet="Specializari">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Denumire" ColumnName="Denumire" />
+                <ScalarProperty Name="DepartamentID" ColumnName="DepartamentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Studentis">
+            <EntityTypeMapping TypeName="FacultateModel.Studenti">
+              <MappingFragment StoreEntitySet="Studenti">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+                <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+                <ScalarProperty Name="Parola" ColumnName="Parola" />
+                <ScalarProperty Name="Data_nasterii" ColumnName="Data_nasterii" />
+                <ScalarProperty Name="Cnp" ColumnName="Cnp" />
+                <ScalarProperty Name="GrupaID" ColumnName="GrupaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="getOrarByGrupaId" FunctionName="FacultateModel.Store.getOrarByGrupaId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FacultateModel.getOrarByGrupaId_Result">
+                <ScalarProperty Name="Zi" ColumnName="Zi" />
+                <ScalarProperty Name="Nr_Row" ColumnName="Nr_Row" />
+                <ScalarProperty Name="Modul" ColumnName="Modul" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="Denumire" ColumnName="Denumire" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getOrarByProfesor" FunctionName="FacultateModel.Store.getOrarByProfesor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FacultateModel.getOrarByProfesor_Result">
+                <ScalarProperty Name="Zi" ColumnName="Zi" />
+                <ScalarProperty Name="Nr_Row" ColumnName="Nr_Row" />
+                <ScalarProperty Name="Modul" ColumnName="Modul" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="Denumire" ColumnName="Denumire" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
