@@ -188,7 +188,7 @@
             </ListView>
         </StackPanel>
 
-        <Grid x:Name="GridMain" Background="#FFFBFBFB" Width="1024" RenderTransformOrigin="0.5,0.5">
+        <Grid x:Name="GridMain" Background="#FFFBFBFB" Width="1024" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="0,0,-6.4,-0.4">
             <Grid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -208,290 +208,290 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-
-            <Grid x:Name="myGrid">
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="45"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="130"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Button x:Name="ButtonCloseMenu" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Click="ButtonCloseMenu_Click" Visibility="Collapsed">
-                    <materialDesign:PackIcon Kind="Menu" Foreground="#FF3580BF"/>
-                </Button>
-                <Button x:Name="ButtonOpenMenu" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Click="ButtonOpenMenu_Click">
-                    <materialDesign:PackIcon Kind="Menu" Foreground="#FF3580BF"/>
-                </Button>
-
-                <TextBlock x:Name="titlu" Text="C193-A" Foreground="#FF3580BF" FontSize="22" FontWeight="bold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="3"/>
-                <!--Row 1-->
-
-                <TextBlock Text="Orar"  Foreground="#FF3580BF" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
-
-                <TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Grid.Column="1" Grid.Row="1"/>
-
-                <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Grid.Column="2" Grid.Row="1"/>
-                <TextBlock Text="3" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Grid.Column="3" Grid.Row="1"/>
-                <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Grid.Column="4" Grid.Row="1"/>
-
-                <TextBlock Text="5" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Grid.Column="5" Grid.Row="1"/>
-                <TextBlock Text="8:00 - 9:50" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="1" Grid.Row="1"/>
-                <TextBlock Text="10:00 - 12:00" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="2" Grid.Row="1"/>
-                <TextBlock Text="12:10 - 14:00" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="1"/>
-                <TextBlock Text="16:00 - 17:50" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="4" Grid.Row="1"/>
-                <TextBlock Text="18:00 - 19:50" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="5" Grid.Row="1"/>
-                <!--Column 0 -->
-
-
-
-                <TextBlock Text="Luni" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="2"/>
-                <TextBlock Text="15.21.2091" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="2"/>
-                <TextBlock Text="Marti" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="3"/>
-                <TextBlock Text="15.21.2091" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="3"/>
-                <TextBlock Text="Miercuri" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="4"/>
-                <TextBlock Text="15.21.2091" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="4"/>
-                <TextBlock Text="Joi" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="5"/>
-                <TextBlock Text="15.21.2091" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="5"/>
-                <TextBlock Text="Vineri" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="6"/>
-                <TextBlock Text="15.21.2091" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="6"/>
-                <TextBlock Text="Luni" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="7"/>
-                <TextBlock Text="15.21.2091" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="7"/>
-                <TextBlock Text="Marti" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="8"/>
-                <TextBlock Text="15.21.2091" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="8"/>
-                <TextBlock Text="Miercuri" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="9"/>
-                <TextBlock Text="15.21.2091" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="9"/>
-                <TextBlock Text="Joi" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="10"/>
-                <TextBlock Text="15.21.2091" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="10"/>
-                <TextBlock Text="Vineri" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="11"/>
-                <TextBlock Text="15.21.2091" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="11"/>
-
-
-                <!-- Coloana 1-->
-
-                <TextBlock x:Name="TB_1_2_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="2"/>
-                <TextBlock x:Name="TB_1_2_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="2"/>
-                <TextBlock x:Name="TB_1_2_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="2"/>
-
-                <TextBlock x:Name="TB_1_3_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="3"/>
-                <TextBlock x:Name="TB_1_3_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="3"/>
-                <TextBlock x:Name="TB_1_3_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="3"/>
-
-                <TextBlock x:Name="TB_1_4_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="4"/>
-                <TextBlock x:Name="TB_1_4_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="4"/>
-                <TextBlock x:Name="TB_1_4_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="4"/>
-
-                <TextBlock x:Name="TB_1_5_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="5"/>
-                <TextBlock x:Name="TB_1_5_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="5"/>
-                <TextBlock x:Name="TB_1_5_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="5"/>
-
-                <TextBlock x:Name="TB_1_6_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="6"/>
-                <TextBlock x:Name="TB_1_6_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="6"/>
-                <TextBlock x:Name="TB_1_6_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="6"/>
-
-                <TextBlock x:Name="TB_1_7_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="7"/>
-                <TextBlock x:Name="TB_1_7_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="7"/>
-                <TextBlock x:Name="TB_1_7_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="7"/>
-
-                <TextBlock x:Name="TB_1_8_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="8"/>
-                <TextBlock x:Name="TB_1_8_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="8"/>
-                <TextBlock x:Name="TB_1_8_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="8"/>
-
-                <TextBlock x:Name="TB_1_9_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="9"/>
-                <TextBlock x:Name="TB_1_9_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="9"/>
-                <TextBlock x:Name="TB_1_9_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="9"/>
-
-                <TextBlock x:Name="TB_1_10_U" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="10"/>
-                <TextBlock x:Name="TB_1_10_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="10"/>
-                <TextBlock x:Name="TB_1_10_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="10"/>
-
-                <TextBlock x:Name="TB_1_11_U" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="11"/>
-                <TextBlock x:Name="TB_1_11_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="11"/>
-                <TextBlock x:Name="TB_1_11_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="11"/>
-
-                <!-- Coloa  na 2-->
-                <TextBlock x:Name="TB_2_2_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="2"/>
-                <TextBlock x:Name="TB_2_2_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="2"/>
-                <TextBlock x:Name="TB_2_2_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="2"/>
-
-                <TextBlock x:Name="TB_2_3_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="3"/>
-                <TextBlock x:Name="TB_2_3_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="3"/>
-                <TextBlock x:Name="TB_2_3_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="3"/>
-
-                <TextBlock x:Name="TB_2_4_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="4"/>
-                <TextBlock x:Name="TB_2_4_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="4"/>
-                <TextBlock x:Name="TB_2_4_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="4"/>
-
-                <TextBlock x:Name="TB_2_5_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="5"/>
-                <TextBlock x:Name="TB_2_5_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="5"/>
-                <TextBlock x:Name="TB_2_5_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="5"/>
-
-                <TextBlock x:Name="TB_2_6_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="6"/>
-                <TextBlock x:Name="TB_2_6_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="6"/>
-                <TextBlock x:Name="TB_2_6_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="6"/>
-
-                <TextBlock x:Name="TB_2_7_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="7"/>
-                <TextBlock x:Name="TB_2_7_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="7"/>
-                <TextBlock x:Name="TB_2_7_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="7"/>
-
-                <TextBlock x:Name="TB_2_8_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="8"/>
-                <TextBlock x:Name="TB_2_8_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="8"/>
-                <TextBlock x:Name="TB_2_8_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="8"/>
-
-                <TextBlock x:Name="TB_2_9_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="9"/>
-                <TextBlock x:Name="TB_2_9_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="9"/>
-                <TextBlock x:Name="TB_2_9_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="9"/>
-
-                <TextBlock x:Name="TB_2_10_U" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="10"/>
-                <TextBlock x:Name="TB_2_10_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="10"/>
-                <TextBlock x:Name="TB_2_10_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="10"/>
-
-                <TextBlock x:Name="TB_2_11_U" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="11"/>
-                <TextBlock x:Name="TB_2_11_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="11"/>
-                <TextBlock x:Name="TB_2_11_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="11"/>
-
-                <!-- Coloa  na 3-->
-                <TextBlock x:Name="TB_3_2_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="3" Grid.Row="2"/>
-                <TextBlock x:Name="TB_3_2_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="2"/>
-                <TextBlock x:Name="TB_3_2_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="2"/>
-
-                <TextBlock x:Name="TB_3_3_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="3" Grid.Row="3"/>
-                <TextBlock x:Name="TB_3_3_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="3"/>
-                <TextBlock x:Name="TB_3_3_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="3"/>
-
-                <TextBlock x:Name="TB_3_4_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="3" Grid.Row="4"/>
-                <TextBlock x:Name="TB_3_4_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="4"/>
-                <TextBlock x:Name="TB_3_4_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="4"/>
-
-                <TextBlock x:Name="TB_3_5_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="3" Grid.Row="5"/>
-                <TextBlock x:Name="TB_3_5_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="5"/>
-                <TextBlock x:Name="TB_3_5_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="5"/>
-
-                <TextBlock x:Name="TB_3_6_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Column="3" Grid.Row="6"/>
-                <TextBlock x:Name="TB_3_6_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="6"/>
-                <TextBlock x:Name="TB_3_6_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="6"/>
-
-                <TextBlock x:Name="TB_3_7_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="3" Grid.Row="7"/>
-                <TextBlock x:Name="TB_3_7_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="7"/>
-                <TextBlock x:Name="TB_3_7_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="7"/>
-
-                <TextBlock x:Name="TB_3_8_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Column="3" Grid.Row="8"/>
-                <TextBlock x:Name="TB_3_8_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="8"/>
-                <TextBlock x:Name="TB_3_8_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="8"/>
-
-                <TextBlock x:Name="TB_3_9_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="3" Grid.Row="9"/>
-                <TextBlock x:Name="TB_3_9_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="9"/>
-                <TextBlock x:Name="TB_3_9_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="9"/>
-
-                <TextBlock x:Name="TB_3_10_U" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Column="3" Grid.Row="10"/>
-                <TextBlock x:Name="TB_3_10_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="10"/>
-                <TextBlock x:Name="TB_3_10_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="10"/>
-
-                <TextBlock x:Name="TB_3_11_U" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Column="3" Grid.Row="11"/>
-                <TextBlock x:Name="TB_3_11_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="11"/>
-                <TextBlock x:Name="TB_3_11_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="11"/>
-
-                <!-- Coloa  na 4-->
-                <TextBlock x:Name="TB_4_2_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="2"/>
-                <TextBlock x:Name="TB_4_2_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="2"/>
-                <TextBlock x:Name="TB_4_2_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="2"/>
-
-                <TextBlock x:Name="TB_4_3_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="3"/>
-                <TextBlock x:Name="TB_4_3_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="3"/>
-                <TextBlock x:Name="TB_4_3_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="3"/>
-
-                <TextBlock x:Name="TB_4_4_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="4"/>
-                <TextBlock x:Name="TB_4_4_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="4"/>
-                <TextBlock x:Name="TB_4_4_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="4"/>
-
-                <TextBlock x:Name="TB_4_5_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="5"/>
-                <TextBlock x:Name="TB_4_5_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="5"/>
-                <TextBlock x:Name="TB_4_5_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="5"/>
-
-                <TextBlock x:Name="TB_4_6_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="6"/>
-                <TextBlock x:Name="TB_4_6_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="6"/>
-                <TextBlock x:Name="TB_4_6_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="6"/>
-
-                <TextBlock x:Name="TB_4_7_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="7"/>
-                <TextBlock x:Name="TB_4_7_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="7"/>
-                <TextBlock x:Name="TB_4_7_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="7"/>
-
-                <TextBlock x:Name="TB_4_8_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="8"/>
-                <TextBlock x:Name="TB_4_8_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="8"/>
-                <TextBlock x:Name="TB_4_8_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="8"/>
-
-                <TextBlock x:Name="TB_4_9_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="9"/>
-                <TextBlock x:Name="TB_4_9_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="9"/>
-                <TextBlock x:Name="TB_4_9_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="9"/>
-
-                <TextBlock x:Name="TB_4_10_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="10"/>
-                <TextBlock x:Name="TB_4_10_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="10"/>
-                <TextBlock x:Name="TB_4_10_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="10"/>
-
-                <TextBlock x:Name="TB_4_11_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="11"/>
-                <TextBlock x:Name="TB_4_11_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="11"/>
-                <TextBlock x:Name="TB_4_11_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="11"/>
-
-                <!-- Coloa  na 5-->
-                <TextBlock x:Name="TB_5_2_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="2"/>
-                <TextBlock x:Name="TB_5_2_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="2"/>
-                <TextBlock x:Name="TB_5_2_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="2"/>
-
-                <TextBlock x:Name="TB_5_3_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="3"/>
-                <TextBlock x:Name="TB_5_3_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="3"/>
-                <TextBlock x:Name="TB_5_3_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="3"/>
-
-                <TextBlock x:Name="TB_5_4_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="4"/>
-                <TextBlock x:Name="TB_5_4_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="4"/>
-                <TextBlock x:Name="TB_5_4_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="4"/>
-
-                <TextBlock x:Name="TB_5_5_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="5"/>
-                <TextBlock x:Name="TB_5_5_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="5"/>
-                <TextBlock x:Name="TB_5_5_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="5"/>
-
-                <TextBlock x:Name="TB_5_6_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="6"/>
-                <TextBlock x:Name="TB_5_6_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="6"/>
-                <TextBlock x:Name="TB_5_6_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="6"/>
-
-                <TextBlock x:Name="TB_5_7_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="7"/>
-                <TextBlock x:Name="TB_5_7_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="7"/>
-                <TextBlock x:Name="TB_5_7_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="7"/>
-
-                <TextBlock x:Name="TB_5_8_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="8"/>
-                <TextBlock x:Name="TB_5_8_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="8"/>
-                <TextBlock x:Name="TB_5_8_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="8"/>
-
-                <TextBlock x:Name="TB_5_9_U"   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="9"/>
-                <TextBlock x:Name="TB_5_9_L"   HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="9"/>
-                <TextBlock x:Name="TB_5_9_R"   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="9"/>
-
-                <TextBlock x:Name="TB_5_10_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="10"/>
-                <TextBlock x:Name="TB_5_10_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="10"/>
-                <TextBlock x:Name="TB_5_10_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="10"/>
-
-                <TextBlock x:Name="TB_5_11_U"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="11"/>
-                <TextBlock x:Name="TB_5_11_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="11"/>
-                <TextBlock x:Name="TB_5_11_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="11"/>
-
-            </Grid>
-
+            <Border BorderBrush="Black" BorderThickness="2">
+                <Grid x:Name="myGrid">
+                  
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="ButtonCloseMenu" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Click="ButtonCloseMenu_Click" Visibility="Collapsed">
+                        <materialDesign:PackIcon Kind="Menu" Foreground="#FF3580BF"/>
+                    </Button>
+                    <Button x:Name="ButtonOpenMenu" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Click="ButtonOpenMenu_Click">
+                        <materialDesign:PackIcon Kind="Menu" Foreground="#FF3580BF"/>
+                    </Button>
+
+                    <TextBlock x:Name="titlu" Text="C193-A" Foreground="#FF3580BF" FontSize="22" FontWeight="bold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="3"/>
+                    <!--Row 1-->
+
+                    <TextBlock Text="Orar"  Foreground="#FF3580BF" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
+
+                    <TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Grid.Column="1" Grid.Row="1"/>
+
+                    <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Grid.Column="2" Grid.Row="1"/>
+                    <TextBlock Text="3" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Grid.Column="3" Grid.Row="1"/>
+                    <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Grid.Column="4" Grid.Row="1"/>
+
+                    <TextBlock Text="5" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Grid.Column="5" Grid.Row="1"/>
+                    <TextBlock Text="8:00 - 9:50" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="1" Grid.Row="1"/>
+                    <TextBlock Text="10:00 - 12:00" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="2" Grid.Row="1"/>
+                    <TextBlock Text="12:10 - 14:00" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="1"/>
+                    <TextBlock Text="16:00 - 17:50" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="4" Grid.Row="1"/>
+                    <TextBlock Text="18:00 - 19:50" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="5" Grid.Row="1"/>
+                    <!--Column 0 -->
+
+
+
+                    <TextBlock Text="Luni" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="2"/>
+                    <TextBlock x:Name="TB_1_2_D" Text="LIBER!" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="2"/>
+                    <TextBlock Text="Marti" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="3"/>
+                    <TextBlock x:Name="TB_1_3_D" Text="LIBER!" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="3"/>
+                    <TextBlock Text="Miercuri" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="4"/>
+                    <TextBlock x:Name="TB_1_4_D" Text="LIBER!" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="4"/>
+                    <TextBlock Text="Joi" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="5"/>
+                    <TextBlock x:Name="TB_1_5_D" Text="LIBER!" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="5"/>
+                    <TextBlock Text="Vineri" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="6"/>
+                    <TextBlock x:Name="TB_1_6_D" Text="LIBER!" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="6"/>
+                    <TextBlock Text="Luni" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="7"/>
+                    <TextBlock x:Name="TB_1_7_D" Text="LIBER!" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="7"/>
+                    <TextBlock Text="Marti" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="8"/>
+                    <TextBlock x:Name="TB_1_8_D" Text="LIBER!" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="8"/>
+                    <TextBlock Text="Miercuri" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="9"/>
+                    <TextBlock x:Name="TB_1_9_D" Text="LIBER!" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="9"/>
+                    <TextBlock Text="Joi" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="10"/>
+                    <TextBlock x:Name="TB_1_10_D" Text="LIBER!" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="10"/>
+                    <TextBlock Text="Vineri" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Row="11"/>
+                    <TextBlock x:Name="TB_1_11_D" Text="LIBER!" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"  Grid.Row="11"/>
+
+
+                    <!-- Coloana 1-->
+
+                    <TextBlock x:Name="TB_1_2_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="2"/>
+                    <TextBlock x:Name="TB_1_2_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="2"/>
+                    <TextBlock x:Name="TB_1_2_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="2"/>
+
+                    <TextBlock x:Name="TB_1_3_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="3"/>
+                    <TextBlock x:Name="TB_1_3_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="3"/>
+                    <TextBlock x:Name="TB_1_3_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="3"/>
+
+                    <TextBlock x:Name="TB_1_4_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="4"/>
+                    <TextBlock x:Name="TB_1_4_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="4"/>
+                    <TextBlock x:Name="TB_1_4_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="4"/>
+
+                    <TextBlock x:Name="TB_1_5_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="5"/>
+                    <TextBlock x:Name="TB_1_5_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="5"/>
+                    <TextBlock x:Name="TB_1_5_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="5"/>
+
+                    <TextBlock x:Name="TB_1_6_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="6"/>
+                    <TextBlock x:Name="TB_1_6_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="6"/>
+                    <TextBlock x:Name="TB_1_6_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="6"/>
+
+                    <TextBlock x:Name="TB_1_7_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="7"/>
+                    <TextBlock x:Name="TB_1_7_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="7"/>
+                    <TextBlock x:Name="TB_1_7_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="7"/>
+
+                    <TextBlock x:Name="TB_1_8_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="8"/>
+                    <TextBlock x:Name="TB_1_8_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="8"/>
+                    <TextBlock x:Name="TB_1_8_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="8"/>
+
+                    <TextBlock x:Name="TB_1_9_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="9"/>
+                    <TextBlock x:Name="TB_1_9_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="9"/>
+                    <TextBlock x:Name="TB_1_9_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="9"/>
+
+                    <TextBlock x:Name="TB_1_10_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="10"/>
+                    <TextBlock x:Name="TB_1_10_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="10"/>
+                    <TextBlock x:Name="TB_1_10_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="10"/>
+
+                    <TextBlock x:Name="TB_1_11_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Grid.Row="11"/>
+                    <TextBlock x:Name="TB_1_11_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="11"/>
+                    <TextBlock x:Name="TB_1_11_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Grid.Row="11"/>
+
+                    <!-- Coloa  na 2-->
+                    <TextBlock x:Name="TB_2_2_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="2"/>
+                    <TextBlock x:Name="TB_2_2_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="2"/>
+                    <TextBlock x:Name="TB_2_2_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="2"/>
+
+                    <TextBlock x:Name="TB_2_3_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="3"/>
+                    <TextBlock x:Name="TB_2_3_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="3"/>
+                    <TextBlock x:Name="TB_2_3_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="3"/>
+
+                    <TextBlock x:Name="TB_2_4_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="4"/>
+                    <TextBlock x:Name="TB_2_4_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="4"/>
+                    <TextBlock x:Name="TB_2_4_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="4"/>
+
+                    <TextBlock x:Name="TB_2_5_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="5"/>
+                    <TextBlock x:Name="TB_2_5_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="5"/>
+                    <TextBlock x:Name="TB_2_5_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="5"/>
+
+                    <TextBlock x:Name="TB_2_6_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="6"/>
+                    <TextBlock x:Name="TB_2_6_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="6"/>
+                    <TextBlock x:Name="TB_2_6_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="6"/>
+
+                    <TextBlock x:Name="TB_2_7_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="7"/>
+                    <TextBlock x:Name="TB_2_7_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="7"/>
+                    <TextBlock x:Name="TB_2_7_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="7"/>
+
+                    <TextBlock x:Name="TB_2_8_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="8"/>
+                    <TextBlock x:Name="TB_2_8_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="8"/>
+                    <TextBlock x:Name="TB_2_8_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="8"/>
+
+                    <TextBlock x:Name="TB_2_9_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="9"/>
+                    <TextBlock x:Name="TB_2_9_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="9"/>
+                    <TextBlock x:Name="TB_2_9_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="9"/>
+
+                    <TextBlock x:Name="TB_2_10_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="10"/>
+                    <TextBlock x:Name="TB_2_10_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="10"/>
+                    <TextBlock x:Name="TB_2_10_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="10"/>
+
+                    <TextBlock x:Name="TB_2_11_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="2" Grid.Row="11"/>
+                    <TextBlock x:Name="TB_2_11_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="11"/>
+                    <TextBlock x:Name="TB_2_11_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="2" Grid.Row="11"/>
+
+                    <!-- Coloa  na 3-->
+                    <TextBlock x:Name="TB_3_2_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="3" Grid.Row="2"/>
+                    <TextBlock x:Name="TB_3_2_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="2"/>
+                    <TextBlock x:Name="TB_3_2_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="2"/>
+
+                    <TextBlock x:Name="TB_3_3_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="3" Grid.Row="3"/>
+                    <TextBlock x:Name="TB_3_3_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="3"/>
+                    <TextBlock x:Name="TB_3_3_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="3"/>
+
+                    <TextBlock x:Name="TB_3_4_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="3" Grid.Row="4"/>
+                    <TextBlock x:Name="TB_3_4_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="4"/>
+                    <TextBlock x:Name="TB_3_4_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="4"/>
+
+                    <TextBlock x:Name="TB_3_5_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="3" Grid.Row="5"/>
+                    <TextBlock x:Name="TB_3_5_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="5"/>
+                    <TextBlock x:Name="TB_3_5_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="5"/>
+
+                    <TextBlock x:Name="TB_3_6_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Column="3" Grid.Row="6"/>
+                    <TextBlock x:Name="TB_3_6_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="6"/>
+                    <TextBlock x:Name="TB_3_6_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="6"/>
+
+                    <TextBlock x:Name="TB_3_7_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="3" Grid.Row="7"/>
+                    <TextBlock x:Name="TB_3_7_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="7"/>
+                    <TextBlock x:Name="TB_3_7_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="7"/>
+
+                    <TextBlock x:Name="TB_3_8_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Column="3" Grid.Row="8"/>
+                    <TextBlock x:Name="TB_3_8_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="8"/>
+                    <TextBlock x:Name="TB_3_8_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="8"/>
+
+                    <TextBlock x:Name="TB_3_9_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="3" Grid.Row="9"/>
+                    <TextBlock x:Name="TB_3_9_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="9"/>
+                    <TextBlock x:Name="TB_3_9_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="9"/>
+
+                    <TextBlock x:Name="TB_3_10_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Column="3" Grid.Row="10"/>
+                    <TextBlock x:Name="TB_3_10_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="10"/>
+                    <TextBlock x:Name="TB_3_10_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="10"/>
+
+                    <TextBlock x:Name="TB_3_11_U" Text="-" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"  Grid.Column="3" Grid.Row="11"/>
+                    <TextBlock x:Name="TB_3_11_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="3" Grid.Row="11"/>
+                    <TextBlock x:Name="TB_3_11_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20"  Grid.Column="3" Grid.Row="11"/>
+
+                    <!-- Coloa  na 4-->
+                    <TextBlock x:Name="TB_4_2_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="2"/>
+                    <TextBlock x:Name="TB_4_2_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="2"/>
+                    <TextBlock x:Name="TB_4_2_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="2"/>
+
+                    <TextBlock x:Name="TB_4_3_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="3"/>
+                    <TextBlock x:Name="TB_4_3_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="3"/>
+                    <TextBlock x:Name="TB_4_3_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="3"/>
+
+                    <TextBlock x:Name="TB_4_4_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="4"/>
+                    <TextBlock x:Name="TB_4_4_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="4"/>
+                    <TextBlock x:Name="TB_4_4_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="4"/>
+
+                    <TextBlock x:Name="TB_4_5_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="5"/>
+                    <TextBlock x:Name="TB_4_5_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="5"/>
+                    <TextBlock x:Name="TB_4_5_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="5"/>
+
+                    <TextBlock x:Name="TB_4_6_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="6"/>
+                    <TextBlock x:Name="TB_4_6_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="6"/>
+                    <TextBlock x:Name="TB_4_6_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="6"/>
+
+                    <TextBlock x:Name="TB_4_7_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="7"/>
+                    <TextBlock x:Name="TB_4_7_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="7"/>
+                    <TextBlock x:Name="TB_4_7_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="7"/>
+
+                    <TextBlock x:Name="TB_4_8_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="8"/>
+                    <TextBlock x:Name="TB_4_8_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="8"/>
+                    <TextBlock x:Name="TB_4_8_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="8"/>
+
+                    <TextBlock x:Name="TB_4_9_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="9"/>
+                    <TextBlock x:Name="TB_4_9_L"  HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="9"/>
+                    <TextBlock x:Name="TB_4_9_R"  HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="9"/>
+
+                    <TextBlock x:Name="TB_4_10_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="10"/>
+                    <TextBlock x:Name="TB_4_10_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="10"/>
+                    <TextBlock x:Name="TB_4_10_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="10"/>
+
+                    <TextBlock x:Name="TB_4_11_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="4" Grid.Row="11"/>
+                    <TextBlock x:Name="TB_4_11_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="11"/>
+                    <TextBlock x:Name="TB_4_11_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="4" Grid.Row="11"/>
+
+                    <!-- Coloa  na 5-->
+                    <TextBlock x:Name="TB_5_2_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="2"/>
+                    <TextBlock x:Name="TB_5_2_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="2"/>
+                    <TextBlock x:Name="TB_5_2_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="2"/>
+
+                    <TextBlock x:Name="TB_5_3_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="3"/>
+                    <TextBlock x:Name="TB_5_3_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="3"/>
+                    <TextBlock x:Name="TB_5_3_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="3"/>
+
+                    <TextBlock x:Name="TB_5_4_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="4"/>
+                    <TextBlock x:Name="TB_5_4_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="4"/>
+                    <TextBlock x:Name="TB_5_4_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="4"/>
+
+                    <TextBlock x:Name="TB_5_5_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="5"/>
+                    <TextBlock x:Name="TB_5_5_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="5"/>
+                    <TextBlock x:Name="TB_5_5_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="5"/>
+
+                    <TextBlock x:Name="TB_5_6_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="6"/>
+                    <TextBlock x:Name="TB_5_6_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="6"/>
+                    <TextBlock x:Name="TB_5_6_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="6"/>
+
+                    <TextBlock x:Name="TB_5_7_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="7"/>
+                    <TextBlock x:Name="TB_5_7_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="7"/>
+                    <TextBlock x:Name="TB_5_7_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="7"/>
+
+                    <TextBlock x:Name="TB_5_8_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="8"/>
+                    <TextBlock x:Name="TB_5_8_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="8"/>
+                    <TextBlock x:Name="TB_5_8_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="8"/>
+
+                    <TextBlock x:Name="TB_5_9_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="9"/>
+                    <TextBlock x:Name="TB_5_9_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="9"/>
+                    <TextBlock x:Name="TB_5_9_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="9"/>
+
+                    <TextBlock x:Name="TB_5_10_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="10"/>
+                    <TextBlock x:Name="TB_5_10_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="10"/>
+                    <TextBlock x:Name="TB_5_10_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="10"/>
+
+                    <TextBlock x:Name="TB_5_11_U" Text="-"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Grid.Column="5" Grid.Row="11"/>
+                    <TextBlock x:Name="TB_5_11_L" HorizontalAlignment="Left" Margin="10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="11"/>
+                    <TextBlock x:Name="TB_5_11_R" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Bottom" FontSize="20" Grid.Column="5" Grid.Row="11"/>
+
+                </Grid>
+            </Border>
 
         </Grid>
 

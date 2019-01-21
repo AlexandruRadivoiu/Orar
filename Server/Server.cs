@@ -40,11 +40,7 @@ namespace Server
                 _clients.Add(new ClientData(listenerSocket.Accept()));
             }
         }
-        public static IEnumerable<DateTime> EachDay(DateTime from, DateTime thru)
-        {
-            for (var day = from.Date; day.Date <= thru.Date; day = day.AddDays(1))
-                yield return day;
-        }
+      
         private static void Insert(DateTime zi,int nr_row,int modul,int grupaID,int profesorMaterieID)
         {
             using (var context = new FacultateEntities())
@@ -77,44 +73,117 @@ namespace Server
              
 
                 int[,] nr_ore = new int[grupe.Count()+1, materii.Count()+1];
-                foreach(var grupa in grupe)
-                foreach (var materie in materii)
-                {
-                    nr_ore[grupa.ID,materie.ID] = materie.Nr_Ore;
-                }
-                int nr_row = 1;
-                foreach (DateTime day in EachDay(new DateTime(2009, 3, 10),new DateTime(2009, 3, 16)))
-                {
-                    nr_row++;
-                    for (int modul = 0; modul < 3;modul++)
-                    {
-                        bool[] ocupat = Enumerable.Repeat(false, 17).ToArray();
-                       foreach(var grupa in grupe)
-                        {
 
-                            foreach(var materie in materii)
-                            {
-                                if (!ocupat[materie.ID])
+
+                foreach(var grupa in grupe)
+                    foreach (var materie in materii)
+                    {
+                        nr_ore[grupa.ID,materie.ID] = materie.Nr_Ore;
+                    }
+                int nr_row = 1;
+
+                var firstDay = CUtils.getFirstDayOfModul();
+                foreach (DateTime day in CUtils.EachDay(CUtils.getFirstDayOfModul(), CUtils.getLastDayOfModul()))
+                {  //pentru fiecare zi
+
+                    if (day.DayOfWeek.Equals("Sunday") || day.DayOfWeek.Equals("Saturday"))
+                        continue;
+                    nr_row++;
+                    if (nr_row < 11)
+                    {
+                        for (int modul = 0; modul < 3; modul++) //pentru fiecare modul
+                        {
+                            bool[] ocupat = Enumerable.Repeat(false, 17).ToArray();
+                            foreach (var grupa in grupe)
+                            {                              
+                                foreach (var materie in materii)
                                 {
-                                    if (nr_ore[grupa.ID,materie.ID] > 0)
+                                    if (!ocupat[materie.ID - 1])
                                     {
-                                        foreach (var x in profesorMaterie)
+                                        if (nr_ore[grupa.ID, materie.ID] > 0)
                                         {
-                                            if (materie.ID == x.MaterieID)
+                                            if (CUtils.isCurs(materie.Denumire))
                                             {
-                                                nr_ore[grupa.ID,materie.ID]--;
-                                                Insert(day,nr_row, modul, grupa.ID, x.ID);
+                                                foreach (var grp in CUtils.getGrupeFromFlux(grupa.Flux))
+                                                {
+                                                    foreach (var x in profesorMaterie)
+                                                    {
+                                                        if (materie.ID == x.MaterieID)
+                                                        {
+                                                            nr_ore[grp.ID, materie.ID]--;
+                                                            Insert(day, nr_row, modul, grp.ID, x.ID);
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                foreach (var x in profesorMaterie)
+                                                {
+                                                    if (materie.ID == x.MaterieID)
+                                                    {
+                                                        nr_ore[grupa.ID, materie.ID]--;
+                                                        Insert(day, nr_row, modul, grupa.ID, x.ID);
+                                                        break;
+                                                    }
+                                                }
+                                                ocupat[materie.ID - 1] = true;
                                                 break;
                                             }
                                         }
-                                        ocupat[materie.ID] = true;
-                                        break;
+                                        if (nr_ore[grupa.ID, materie.ID] > 0)
+                                        {
+                                            foreach (var x in profesorMaterie)
+                                            {
+                                                if (materie.ID == x.MaterieID)
+                                                {                                                
+                                                    nr_ore[grupa.ID, materie.ID]--;
+                                                    Insert(day, nr_row, modul, grupa.ID, x.ID);
+                                                    break;
+                                                }
+                                            }
+                                            ocupat[materie.ID - 1] = true;
+                                            break;
+                                        }
                                     }
                                 }
+
                             }
 
                         }
+                    }
+                    else
+                    {
+                        for(int modul = 3;modul <5;modul ++)
+                        {
+                            bool[] ocupat = Enumerable.Repeat(false, 17).ToArray();
+                            foreach (var grupa in grupe)
+                            {
 
+                                foreach (var materie in materii)
+                                {
+                                    if (!ocupat[materie.ID - 1])
+                                    {
+                                        if (nr_ore[grupa.ID, materie.ID] > 0)
+                                        {
+                                            foreach (var x in profesorMaterie)
+                                            {
+                                                if (materie.ID == x.MaterieID)
+                                                {
+                                                    nr_ore[grupa.ID, materie.ID]--;
+                                                    Insert(firstDay, nr_row-9, modul, grupa.ID, x.ID);
+                                                    break;
+                                                }
+                                            }
+                                            ocupat[materie.ID - 1] = true;
+                                            break;
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
                     }
                 }
             }
@@ -208,9 +277,12 @@ namespace Server
 
                                 foreach (Studenti student in studenti)
                                      {
-                                         if (student.Nickname.Equals(p.GData[0]))
+                                    var x1 = p.GData[0];
+                                    var x2 = p.GData[1];
+                                    if(student.Nickname!=null)
+                                    if (student.Nickname.Equals(x1))
                                          {
-                                             if (student.Parola.Equals(p.GData[1])) { 
+                                             if (student.Parola.Equals(x2)) { 
                                              c.name = p.GData[0];
                                             if (isOrar)
                                             {
@@ -232,10 +304,12 @@ namespace Server
                                      }
                                  foreach(Profesori profesor in profesori)
                                  {
-                                    if(profesor.Nickname!=null)
-                                     if (profesor.Nickname.Equals(p.GData[0]))
+                                    var x1 = p.GData[0];
+                                    var x2 = p.GData[1];
+                                    if (profesor.Nickname!=null)
+                                     if (profesor.Nickname.Equals(x1))                                   
                                      {
-                                         if (profesor.Parola.Equals(p.GData[1]))
+                                         if (profesor.Parola.Equals(x2))
                                          {
                                              c.name = p.GData[0];
                                                 if (isOrar)
@@ -281,8 +355,10 @@ namespace Server
                                         {
                                             if (student.Prenume.Equals(p.GData[1]))
                                             {
+                                                string x1 = p.GData[0];
+                                                string x2 = p.GData[1];
                                                 var studentnou = (from c1 in context.Studentis
-                                                                   where c1.Nume.Equals(p.GData[0]) && c1.Prenume.Equals(p.GData[1])
+                                                                   where c1.Nume.Equals(x1) && c1.Prenume.Equals(x2)
                                                                    select c1).First();
                                                 studentnou.Nickname = p.GData[2];
                                                 studentnou.Parola = p.GData[3];
@@ -357,7 +433,9 @@ namespace Server
                                 {
                                     foreach (Studenti student in studenti)
                                     {
-                                        if (student.Nickname.Equals(p.GData[0]))                
+                                        var x1 = p.GData[0];
+                                        if(student.Nickname !=null)
+                                        if (student.Nickname.Equals(x1))              
                                                 packet = GetOrar(student.GrupaID, packet);
                                                 packet.GData.Add(student.Nume);
                                     }
@@ -366,8 +444,9 @@ namespace Server
                                 {
                                     foreach (Profesori profesor in profesori)
                                     {
+                                        var x1 = p.GData[0];
                                         if (profesor.Nickname != null)
-                                            if (profesor.Nickname.Equals(p.GData[0]))                                        
+                                            if (profesor.Nickname.Equals(x1))                                        
                                                         packet = GetOrar(profesor.Nume, packet);
                                         packet.GData.Add(profesor.Nume);
                                     }

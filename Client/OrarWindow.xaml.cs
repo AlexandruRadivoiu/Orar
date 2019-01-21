@@ -27,10 +27,16 @@ namespace Client
         }
             private void Init()
             {
-
+         
                 foreach (var item in CClient.orar)
                 {
+              
+
                     StringBuilder materie = new StringBuilder("TB_");
+                    StringBuilder day = new StringBuilder("TB_1_");
+                    day.Append(item.Nr_Row.ToString());
+                    day.Append("_D");
+
                     int x = ++item.Modul;
                     materie.Append(x.ToString());
                     materie.Append("_");
@@ -46,10 +52,11 @@ namespace Client
                     TBmaterie.Text = item.Denumire.ToString();
                     var TBprofesor = (TextBlock)FindName(profesor.ToString());
                     TBprofesor.Text = item.Nume.ToString();
+                    var TBday = (TextBlock)FindName(day.ToString());
+                    TBday.Text = item.Zi.ToString("dd.MM.yyyy");
+          
 
-
-                 
-                }
+            }
             }
             private void ButtonClose_Click(object sender, RoutedEventArgs e)
             {
