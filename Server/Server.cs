@@ -86,7 +86,8 @@ namespace Server
                 foreach (DateTime day in CUtils.EachDay(CUtils.getFirstDayOfModul(), CUtils.getLastDayOfModul()))
                 {  //pentru fiecare zi
 
-                    if (day.DayOfWeek.Equals("Sunday") || day.DayOfWeek.Equals("Saturday"))
+                    if (day.DayOfWeek.ToString().Equals("Sunday") || day.DayOfWeek.ToString().Equals("Saturday"))
+                     
                         continue;
                     nr_row++;
                     if (nr_row < 11)
